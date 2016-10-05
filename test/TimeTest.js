@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import Time from '../src/Time';
+import { Time } from '../src';
 
 describe('Time', () => {
 

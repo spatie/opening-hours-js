@@ -1,11 +1,11 @@
-import days, { isValidDay } from './days';
 import { forEach, mapValues } from 'lodash';
+import Day from './lib/Day';
 import OpeningHoursForDay from './OpeningHoursForDay';
 
 class OpeningHours {
     constructor() {
         this._openingHours = {};
-        days.forEach(day => this._openingHours[day] = new OpeningHoursForDay());
+        Day.days().forEach(day => this._openingHours[day] = new OpeningHoursForDay());
     }
 
     static create(data) {
@@ -69,7 +69,7 @@ class OpeningHours {
     _normalizeDayName(day) {
         day = day.toLowerCase();
 
-        if (! isValidDay(day)) {
+        if (! Day.isValid(day)) {
             throw new Error(`Day \`${day}\` isn't a valid day name. ` +
                 'Valid day names are lowercase english words, e.g. `monday`, `thursday`.');
         }

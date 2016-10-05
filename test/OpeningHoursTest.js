@@ -8,7 +8,6 @@ describe('OpeningHours', () => {
             monday: ['09:00-18:00'],
         });
 
-
         const openingHoursForWeek = openingHours.forWeek();
 
         assert.strictEqual('09:00-18:00', openingHoursForWeek['monday'].openingHours[0].toString());

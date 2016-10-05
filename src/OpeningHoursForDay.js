@@ -1,4 +1,4 @@
-import { createUniquePairs } from './util';
+import Arr from './lib/Arr';
 import TimeRange from './TimeRange';
 
 class OpeningHoursForDay {
@@ -33,7 +33,7 @@ class OpeningHoursForDay {
     }
 
     _guardAgainstTimeRangeOverlaps(openingHours) {
-        createUniquePairs(openingHours).forEach(([rangeA, rangeB]) => {
+        Arr.createUniquePairs(openingHours).forEach(([rangeA, rangeB]) => {
             if (rangeA.overlaps(rangeB)) {
                 throw new Error(`Time ranges ${rangeA} and ${rangeB} overlap.`);
             }

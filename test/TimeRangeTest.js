@@ -1,6 +1,5 @@
+import { Time, TimeRange } from '../src';
 import { assert } from 'chai';
-import Time from '../src/Time';
-import TimeRange from '../src/TimeRange';
 
 describe('Time', () => {
 

@@ -1,6 +1,5 @@
+import { OpeningHoursForDay, Time } from '../src';
 import { assert } from 'chai';
-import OpeningHoursForDay from '../src/OpeningHoursForDay';
-import Time from '../src/Time';
 
 describe('OpeningHoursForDay', () => {
 

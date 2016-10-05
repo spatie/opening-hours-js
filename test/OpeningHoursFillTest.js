@@ -1,6 +1,5 @@
+import OpeningHours, { Day } from '../src';
 import { assert } from 'chai';
-import days from '../src/days';
-import OpeningHours from '../src/OpeningHours';
 
 describe('OpeningHours', () => {
 
@@ -27,7 +26,7 @@ describe('OpeningHours', () => {
     it('can_handle_empty_input', () => {
         const openingHours = OpeningHours.create({});
 
-        days.forEach(day => {
+        Day.days().forEach(day => {
             assert.lengthOf(openingHours.forDay(day).openingHours, 0);
         });
     });
