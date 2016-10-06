@@ -69,6 +69,7 @@ export const isValidTimeRangeString = (string) => {
 };
 
 export default {
+    hasTimeRangeOverlap,
     isValidDateString,
     isValidDayName,
     isValidTimeString,
