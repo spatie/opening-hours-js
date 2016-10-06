@@ -25,6 +25,8 @@ export const isValidDateString = (string) => {
     const month = parseInt(parts[1]);
     const day = parseInt(parts[2]);
 
+    // http://stackoverflow.com/a/8390325/999733
+
     if((month < 1) || (month > 12)) {
         return false;
     }
