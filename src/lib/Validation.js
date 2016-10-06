@@ -1,4 +1,14 @@
+import { createUniquePairs } from './Arr';
 import { days } from './Day';
+
+export const hasTimeRangeOverlap = (openingHours) => {
+    for (const [rangeA, rangeB] of createUniquePairs(openingHours)) {
+        if (rangeA.overlaps(rangeB)) {
+            return false;
+        }
+    }
+    return true;
+};
 
 export const isValidDateString = (string) => {
     const parts = string.split('-');
