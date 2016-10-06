@@ -4,10 +4,10 @@ import { days } from './Day';
 export const hasTimeRangeOverlap = (timeRanges) => {
     for (const [rangeA, rangeB] of createUniquePairs(timeRanges)) {
         if (rangeA.overlaps(rangeB)) {
-            return false;
+            return true;
         }
     }
-    return true;
+    return false;
 };
 
 export const isValidDateString = (string) => {
