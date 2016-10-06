@@ -1,8 +1,8 @@
 import { createUniquePairs } from './Arr';
 import { days } from './Day';
 
-export const hasTimeRangeOverlap = (openingHours) => {
-    for (const [rangeA, rangeB] of createUniquePairs(openingHours)) {
+export const hasTimeRangeOverlap = (timeRanges) => {
+    for (const [rangeA, rangeB] of createUniquePairs(timeRanges)) {
         if (rangeA.overlaps(rangeB)) {
             return false;
         }
