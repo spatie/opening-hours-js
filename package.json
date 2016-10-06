@@ -1,6 +1,6 @@
 {
   "name": "opening-hours",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": ":package_description",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
