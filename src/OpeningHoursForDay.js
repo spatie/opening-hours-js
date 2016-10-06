@@ -9,11 +9,9 @@ class OpeningHoursForDay {
     static fromStrings(strings) {
         const openingHoursForDay = new OpeningHoursForDay();
 
-        const timeRanges = strings.map(string => TimeRange.fromString(string));
+        openingHoursForDay._guardAgainstTimeRangeOverlaps(strings);
 
-        openingHoursForDay._guardAgainstTimeRangeOverlaps(timeRanges);
-
-        openingHoursForDay._openingHours = timeRanges;
+        openingHoursForDay._openingHours = strings.map(string => TimeRange.fromString(string));
 
         return openingHoursForDay;
     }

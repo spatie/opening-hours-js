@@ -1,9 +1,10 @@
 import { createUniquePairs } from './Arr';
 import { days } from './Day';
+import TimeRange from '../TimeRange';
 
 export const hasTimeRangeOverlap = (timeRanges) => {
     for (const [rangeA, rangeB] of createUniquePairs(timeRanges)) {
-        if (rangeA.overlaps(rangeB)) {
+        if (TimeRange.fromString(rangeA).overlaps(TimeRange.fromString(rangeB))) {
             return true;
         }
     }
