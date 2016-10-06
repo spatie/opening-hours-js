@@ -1,19 +1,5 @@
 import { days } from './Day';
 
-export const isValidTimeString = (string) => {
-    return string.match('^(([0-1][0-9])|(2[0-4])):[0-5][0-9]$');
-};
-
-export const isValidTimeRangeString = (string) => {
-    const times = string.split('-');
-
-    if (times.length !== 2) {
-        return false;
-    }
-
-    return isValidTimeString(times[0]) && isValidTimeString(times[1]);
-};
-
 export const isValidDateString = (string) => {
     const parts = string.split('-');
 
@@ -56,4 +42,25 @@ export const isValidDateString = (string) => {
 
 export const isValidDayName = (name) => {
     return days().filter(day => day === name).length > 0;
+};
+
+export const isValidTimeString = (string) => {
+    return string.match('^(([0-1][0-9])|(2[0-4])):[0-5][0-9]$');
+};
+
+export const isValidTimeRangeString = (string) => {
+    const times = string.split('-');
+
+    if (times.length !== 2) {
+        return false;
+    }
+
+    return isValidTimeString(times[0]) && isValidTimeString(times[1]);
+};
+
+export default {
+    isValidDateString,
+    isValidDayName,
+    isValidTimeString,
+    isValidTimeRangeString,
 };
