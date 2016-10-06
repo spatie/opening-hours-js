@@ -1,3 +1,4 @@
+import { isValidTimeString } from './lib/Validation';
 import { padStart } from 'lodash';
 
 class Time {
@@ -7,7 +8,7 @@ class Time {
     }
 
     static fromString(string) {
-        if (! Time.validateString(string)) {
+        if (! isValidTimeString(string)) {
             throw new Error(`The string \`${string}\` isn't a valid time string. `
                 + 'A time string must be a formatted as `H:i`, e.g. `06:00`, `18:00`.');
         }
@@ -15,10 +16,6 @@ class Time {
         const [ hours, minutes ] = string.split(':');
 
         return new Time(parseInt(hours), parseInt(minutes));
-    }
-
-    static validateString(string) {
-        return string.match('^(([0-1][0-9])|(2[0-4])):[0-5][0-9]$');
     }
 
     get hours() {

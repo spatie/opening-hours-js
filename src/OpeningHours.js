@@ -1,4 +1,5 @@
-import { forEach, mapValues } from 'lodash';
+import { forEach, forIn, mapValues } from 'lodash';
+import { isValidDateString, isValidDayName } from './lib/Validation';
 import Day from './lib/Day';
 import OpeningHoursForDay from './OpeningHoursForDay';
 
@@ -63,13 +64,22 @@ class OpeningHours {
     }
 
     _setExceptionsFromStrings(exceptions) {
-        this._exceptions = mapValues(exceptions, openingHours => OpeningHoursForDay.fromStrings(openingHours));
+        forIn(exceptions, (_, date) => {
+            if (! isValidDateString(date)) {
+                throw new Error(`Exception \`${date}\` isn't a valid date string. ` +
+                    'Date strings must be formatted as `YYYY-MM-DD`, e.g. `2016-10-06`.');
+            }
+        });
+
+        this._exceptions = mapValues(exceptions, (openingHours) => {
+            return OpeningHoursForDay.fromStrings(openingHours);
+        });
     }
 
     _normalizeDayName(day) {
         day = day.toLowerCase();
 
-        if (! Day.isValid(day)) {
+        if (! isValidDayName(day)) {
             throw new Error(`Day \`${day}\` isn't a valid day name. ` +
                 'Valid day names are lowercase english words, e.g. `monday`, `thursday`.');
         }

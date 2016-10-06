@@ -1,3 +1,4 @@
+import { isValidTimeRangeString } from './lib/Validation';
 import Time from './Time';
 
 class TimeRange {
@@ -7,12 +8,12 @@ class TimeRange {
     }
 
     static fromString(string) {
-        const times = string.split('-');
-
-        if (times.length !== 2) {
+        if (! isValidTimeRangeString(string)) {
             throw new Error(`The string \`${string}\` isn't a valid time range string. `
                 + 'A time string must be a formatted as `H:i-H:i`, e.g. `09:00-18:00`.');
         }
+
+        const times = string.split('-');
 
         return new TimeRange(Time.fromString(times[0]), Time.fromString(times[1]));
     }

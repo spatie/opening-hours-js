@@ -1,7 +1,7 @@
 import { Time, TimeRange } from '../src';
 import { assert } from 'chai';
 
-describe('Time', () => {
+describe('TimeRange', () => {
 
     it('can be created from a string', () => {
         const timeRange = TimeRange.fromString('16:00-18:00');

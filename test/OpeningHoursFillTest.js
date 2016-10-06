@@ -1,7 +1,7 @@
 import OpeningHours, { Day } from '../src';
 import { assert } from 'chai';
 
-describe('OpeningHours', () => {
+describe('OpeningHours::fill', () => {
 
     it('fills_opening_hours', () => {
         const openingHours = OpeningHours.create({
@@ -44,6 +44,16 @@ describe('OpeningHours', () => {
         assert.throws(() => {
             OpeningHours.create({
                 mmmmonday: ['09:00-18:00'],
+            });
+        });
+    });
+
+    it('will_throw_an_exception_when_using_an_invalid_exception_date', () => {
+        assert.throws(() => {
+            OpeningHours.create({
+                exceptions: {
+                    '2016-01-32': [],
+                },
             });
         });
     });
