@@ -1,13 +1,9 @@
 {
     "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "experimentalObjectRestSpread": true
-        }
+        "ecmaVersion": 2018,
+        "sourceType": "module"
     },
     "env": {
-        "es6": true,
         "browser": true,
         "node": true
     },
