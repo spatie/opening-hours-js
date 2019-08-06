@@ -1,3 +1,5 @@
+**THIS PACKAGE IS NOT MAINTAINED ANYMORE**
+
 # opening-hours
 
 [![Latest Version on NPM](https://img.shields.io/npm/v/opening-hours.svg?style=flat-square)](https://npmjs.com/package/opening-hours)
