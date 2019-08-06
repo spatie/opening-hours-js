@@ -15,7 +15,7 @@ Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview 
 You can install the package via npm:
 
 ```bash
-$ npm install opening-hours
+npm install opening-hours
 ```
 
 ## Usage
@@ -33,7 +33,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 ## Testing
 
 ``` bash
-$ npm run test
+npm run test
 ```
 
 ## Contributing
